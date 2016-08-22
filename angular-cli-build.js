@@ -16,8 +16,9 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
+      // below are the AngularFire entries
       'angularfire2/**/*.js',
-      'firebase/lib/*.js'
+      'firebase/*.js'    
     ]
   });
 };

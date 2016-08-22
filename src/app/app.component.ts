@@ -9,15 +9,15 @@ import { Observable } from 'rxjs/Observable'
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  items: Observable<any[]>;
+  items: FirebaseListObservable<any[]>;
+  title = 'Angular Fire 2 Chat';
 
   constructor(af: AngularFire) {
-    this.items = af.database.list('/chats')  
-
-    this.items.subscribe(x => console.log(x));
-
-    console.log(this.items);
-    
+    this.items = af.database.list('/chats')      
   }
-  title = 'app works!';
+
+  save(text: string){
+    this.items.push({ text })
+  }
 }
+

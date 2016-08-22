@@ -1,8 +1,10 @@
 <h1>
   {{title}}
 </h1>
-<ul *ngFor="#item of items | async">
+<input #chat type="text">
+<button (click)="save(chat.value)">Add</button>
+<ul *ngFor="let item of items | async">
   <li class="text">
-    {{ item.$value }}
+    {{ item.text }}
   </li>
 </ul>
